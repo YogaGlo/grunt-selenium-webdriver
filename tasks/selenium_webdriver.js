@@ -54,14 +54,14 @@ if ( fs.existsSync('jar/' + JAR_NAME) ) {
     throw new Error('Unable to find path to selenium, please run npm install and find the relative path for your system. Current location: [' + __dirname + ']. '  + getEnv() );
 }
 // installed as module or locally?
-if ( fs.existsSync( phantomLoc + "/../node_modules/phantomjs-prebuilt/bin/phantomjs") ) {
+if ( fs.existsSync( phantomLoc + "/../node_modules/phantomjs/bin/phantomjs") ) {
 //    console.log ('branch 1b');
     // mac as grunt plugin test
-    phantomLoc += "/../node_modules/phantomjs-prebuilt/bin";
-} else if (fs.existsSync(phantomLoc + '/../../phantomjs-prebuilt/bin/phantomjs')) {
+    phantomLoc += "/../node_modules/phantomjs/bin";
+} else if (fs.existsSync(phantomLoc + '/../../phantomjs/bin/phantomjs')) {
     // mac, module use
 //    console.log ('branch 2b');
-    phantomLoc += "/../../phantomjs-prebuilt/bin";
+    phantomLoc += "/../../phantomjs/bin";
 } else {
     // if adding new cases please identify environment so that changes can be maintained
     throw new Error('Unable to find path to phantomjs, please run npm install and find the relative path for your system. Current location: [' + __dirname + ']' +
